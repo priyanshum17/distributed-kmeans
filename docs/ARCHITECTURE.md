@@ -89,7 +89,7 @@ This design isolates Spark’s control plane from host network clutter and secur
 
 ## 5. Resource Provisioning & Isolation
 
-* **Executor Memory**: Default 512 GB per worker; manually increased to 2 GB to avoid OOM on 2.4 GB dataset.
+* **Executor Memory**: Default 512 MB per worker; could be manually increased to 2 GB to avoid OOM on 2.4 GB dataset.
 * **CPU Cores**: Each worker container sees 8 cores; Spark `ResourceProfile` uses 1 core per task.
 * **Off-Heap Storage**: Disabled by default; could be enabled for large intermediate shuffle data.
 
