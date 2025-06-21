@@ -68,9 +68,34 @@ of each run.
 | `docs/ARCHITECTURE.md` | Deep dive into container, storage & shuffle design             |
 | `docs/RESULTS.md`      | PhD-level performance analysis, plots & discussion             |
 
----
+## Execution Screenshots
 
-## Sample Results
+<div align="center">
+
+### Five Workers Configuration
+
+<img src="results/images/fiveworkers.png" alt="Five Workers" />
+
+*Distributed processing with 5 worker nodes*
+
+### K-Means Clustering Results
+
+<img src="results/images/kmeanscluster.png" alt="K-Means Clustering" />
+
+*Machine learning algorithm visualization*
+
+### Two Workers Configuration
+
+<img src="results/images/twoworkers.png" alt="Two Workers" />
+
+*Comparison setup with 2 worker nodes*
+
+</div>
+
+
+
+
+## Results
 
 | Workers | Dataset Fraction | Runtime (s) | WSSSE (↓ better) |
 | :-----: | :--------------: | ----------: | ---------------: |
@@ -91,5 +116,4 @@ docs/RESULTS.md for full derivation.*
 | **[INSTALLATION.md](docs/INSTALLATION.md)** | Conda, Docker & dataset setup with copy-paste blocks |
 | **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** | Container topology, partition strategy, memory model |
 | **[RESULTS.md](docs/RESULTS.md)**           | Experimental methodology, plots, statistical tests   |
-
 
