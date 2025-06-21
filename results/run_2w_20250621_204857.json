@@ -1,0 +1,24 @@
+{
+  "file": "/workspace/data/SUSY.csv",
+  "size_gb": 2.39,
+  "rows": 5000000,
+  "features": 0,
+  "spark_partitions": 16,
+  "tag": "run_2w",
+  "hostname": "657d07c84e28",
+  "workers": 1,
+  "k": 8,
+  "maxIter": 20,
+  "train_sec": 416.05,
+  "wssse": 32536283.62833767,
+  "cluster_sizes": [
+    673382,
+    802290,
+    282158,
+    807506,
+    782511,
+    650945,
+    797488,
+    203720
+  ]
+}

@@ -1,0 +1,89 @@
+### Loaded 2,501,033 rows, 0 features (2.39 GB) in 16 partitions
+Traceback (most recent call last):
+  File "/workspace/src/kmeans_job.py", line 63, in <module>
+    main()
+  File "/workspace/src/kmeans_job.py", line 40, in main
+    model = KMeans(k=args.k, maxIter=args.maxIter, seed=42).fit(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/ml/base.py", line 203, in fit
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/ml/util.py", line 164, in wrapped
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/ml/wrapper.py", line 411, in _fit
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/ml/wrapper.py", line 407, in _fit_java
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 282, in deco
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 327, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o58.fit.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 38 in stage 8.0 failed 4 times, most recent failure: Lost task 38.3 in stage 8.0 (TID 210) (172.18.0.5 executor 14): ExecutorLostFailure (executor 14 exited caused by one of the running tasks) Reason: Command exited with code 137
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$3(DAGScheduler.scala:2935)
+	at scala.Option.getOrElse(Option.scala:201)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2935)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2927)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2927)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1295)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1295)
+	at scala.Option.foreach(Option.scala:437)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1295)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3207)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3141)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3130)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:50)
+	at org.apache.spark.util.Utils$.getTryWithCallerStacktrace(Utils.scala:1439)
+	at org.apache.spark.util.LazyTry.get(LazyTry.scala:58)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:266)
+	at org.apache.spark.sql.classic.Dataset.materializedRdd$lzycompute(Dataset.scala:1578)
+	at org.apache.spark.sql.classic.Dataset.materializedRdd(Dataset.scala:1576)
+	at org.apache.spark.sql.classic.Dataset.$anonfun$rdd$1(Dataset.scala:1586)
+	at org.apache.spark.sql.classic.Dataset.$anonfun$withNewRDDExecutionId$1(Dataset.scala:2221)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$8(SQLExecution.scala:162)
+	at org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:268)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$7(SQLExecution.scala:124)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:112)
+	at org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:106)
+	at org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:111)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$6(SQLExecution.scala:124)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:291)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:123)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:77)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:233)
+	at org.apache.spark.sql.classic.Dataset.withNewRDDExecutionId(Dataset.scala:2219)
+	at org.apache.spark.sql.classic.Dataset.rdd$lzycompute(Dataset.scala:1586)
+	at org.apache.spark.sql.classic.Dataset.rdd(Dataset.scala:1584)
+	at org.apache.spark.ml.util.Instrumentation.logDataset(Instrumentation.scala:64)
+	at org.apache.spark.ml.clustering.KMeans.$anonfun$fit$1(KMeans.scala:383)
+	at org.apache.spark.ml.util.Instrumentation$.$anonfun$instrumented$1(Instrumentation.scala:226)
+	at scala.util.Try$.apply(Try.scala:217)
+	at org.apache.spark.ml.util.Instrumentation$.instrumented(Instrumentation.scala:226)
+	at org.apache.spark.ml.clustering.KMeans.fit(KMeans.scala:379)
+	at org.apache.spark.ml.clustering.KMeans.fit(KMeans.scala:303)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+	at java.base/java.lang.Thread.run(Unknown Source)
+	Suppressed: org.apache.spark.util.Utils$OriginalTryStackTraceException: Full stacktrace of original doTryWithCallerStacktrace caller
+		at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$3(DAGScheduler.scala:2935)
+		at scala.Option.getOrElse(Option.scala:201)
+		at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2935)
+		at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2927)
+		at scala.collection.immutable.List.foreach(List.scala:334)
+		at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2927)
+		at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1295)
+		at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1295)
+		at scala.Option.foreach(Option.scala:437)
+		at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1295)
+		at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3207)
+		at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3141)
+		at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3130)
+		at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:50)
+

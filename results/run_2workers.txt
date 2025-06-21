@@ -1,0 +1,3 @@
+### Loaded 2,501,033 rows, 0 features (2.39 GB) in 16 partitions
+### Completed in 350.11s | WSSSE=16,252,201 | clusterSizes=[431797, 398346, 101927, 511345, 130852, 145674, 362477, 418615]
+→ metrics saved to /workspace/results/run_20250621_210412.json

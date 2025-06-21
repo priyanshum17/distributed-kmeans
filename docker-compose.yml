@@ -1,0 +1,38 @@
+services:
+  spark-master:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "18081:8081"
+    volumes:
+      # Mount data volume in a safe location
+      - spark_master_data:/bitnami/spark-data
+      # Mount code and data as read-only
+      - ./src:/workspace/src:ro
+      - ./data:/workspace/data:ro
+      # Mount results directory for writing output
+      - ./results:/workspace/results
+
+  spark-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    volumes:
+      # Mount data volume in a safe location
+      - spark_worker_data:/bitnami/spark-data
+      # Mount code and data as read-only
+      - ./src:/workspace/src:ro
+      - ./data:/workspace/data:ro
+      # Mount results directory for writing output
+      - ./results:/workspace/results
+
+volumes:
+  spark_master_data:
+  spark_worker_data:
