@@ -74,25 +74,51 @@ of each run.
 
 ### Five Workers Configuration
 
-<img src="results/images/fiveworkers.png" alt="Five Workers" />
+<img src="results/images/fiveworkers.png" alt="Five Workers" width="600" />
 
 *Distributed processing with 5 worker nodes*
 
+---
+
 ### K-Means Clustering Results
 
-<img src="results/images/kmeanscluster.png" alt="K-Means Clustering" />
+<img src="results/images/kmeanscluster.png" alt="K-Means Clustering" width="600" />
 
 *Machine learning algorithm visualization*
 
+---
+
 ### Two Workers Configuration
 
-<img src="results/images/twoworkers.png" alt="Two Workers" />
+<img src="results/images/twoworkers.png" alt="Two Workers" width="600" />
 
 *Comparison setup with 2 worker nodes*
 
+---
+
+### Dataset Size and Worker Memory Allocation
+
+<img src="results/images/filesizeandworkersize.png" alt="File Size and Worker Memory" width="600" />
+
+*Showing dataset size versus allocated worker memory*
+
+---
+
+### 1GB Memory Allocation Illustration
+
+<img src="results/images/1GBAllocation.png" alt="1GB Allocation" width="600" />
+
+*Visual explanation of 1GB RAM allocation in cluster*
+
+---
+
+### Container Cleanup Status
+
+<img src="results/images/ContainerCleanup.png" alt="Container Cleanup" width="600" />
+
+*Docker container cleanup after job completion*
+
 </div>
-
-
 
 
 ## Results

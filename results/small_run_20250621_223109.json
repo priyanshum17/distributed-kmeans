@@ -1,0 +1,24 @@
+{
+  "tag": "small_run",
+  "hostname": "ae1fd8f1bf05",
+  "workers": 1,
+  "k": 8,
+  "maxIter": 20,
+  "parts": 16,
+  "rows": 2501033,
+  "features": 18,
+  "size_gb": 0.36,
+  "fraction": 0.5,
+  "train_sec": 119.6,
+  "wssse": 16299379.291209986,
+  "cluster_sizes": [
+    413613,
+    414446,
+    335343,
+    414388,
+    101300,
+    325170,
+    360068,
+    136705
+  ]
+}
