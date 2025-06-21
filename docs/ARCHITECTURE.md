@@ -1,6 +1,8 @@
 
 # ARCHITECTURE.md  
 
+![alt text](image.png)
+
 ## 1. System Overview
 
 We implement a **containerized Spark cluster** on a single host, orchestrated via Docker Compose. Each Spark component lives in its own container:

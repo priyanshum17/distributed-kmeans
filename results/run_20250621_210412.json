@@ -6,7 +6,7 @@
   "spark_partitions": 16,
   "tag": "run",
   "hostname": "5d6934d066e4",
-  "workers": 1,
+  "workers": 5,
   "k": 8,
   "maxIter": 20,
   "train_sec": 350.11,
