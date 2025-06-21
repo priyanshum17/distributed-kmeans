@@ -10,7 +10,7 @@ laptop with ≥ 8 GB RAM**.
 > *Use it for coursework, for a quick demo in your data-engineering talk, or
 > as a seed repo for more advanced distributed-ML explorations.*
 
-
+![alt text](results/output.png)
 ---
 
 ## Table of Contents
